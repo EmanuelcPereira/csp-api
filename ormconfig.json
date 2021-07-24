@@ -1,8 +1,19 @@
 {
   "type": "mysql",
-  "host": "localhost",
+  "host": "scp_database",
   "port": 3306,
   "username": "root",
   "password": "scpPWD",
-  "database": "scp"
+  "database": "scp",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+    "./src/modules/**/entities/**/*.ts"
+  ],
+  "migrations": [
+    "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/shared/infra/typeorm/migrations/"
+  }
 }
