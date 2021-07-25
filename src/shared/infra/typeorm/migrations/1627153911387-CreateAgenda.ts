@@ -26,11 +26,6 @@ export class CreateAgenda1627153911387 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'phones',
-            type: 'varchar',
-            isArray: true,
-          },
-          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
