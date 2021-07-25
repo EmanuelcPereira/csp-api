@@ -1,12 +1,10 @@
 {
   "type": "mysql",
-  "host": "scp_database",
+  "host": "localhost",
   "port": 3306,
   "username": "root",
-  "password": "scpPWD",
-  "database": "scp",
-  "synchronize": true,
-  "logging": false,
+  "password": "cspPWD",
+  "database": "csp",
   "entities": [
     "./src/modules/**/entities/**/*.ts"
   ],
