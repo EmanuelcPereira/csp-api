@@ -2,9 +2,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+
+import Contact from './Contact';
 
 @Entity('phones')
 class Phone {
@@ -16,6 +20,10 @@ class Phone {
 
   @Column()
   contact_id: string;
+
+  @ManyToOne(() => Contact)
+  @JoinColumn({ name: 'contact_id' })
+  contact: Contact;
 
   @CreateDateColumn()
   created_at: Date;
