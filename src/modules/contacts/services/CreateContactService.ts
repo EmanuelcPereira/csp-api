@@ -1,11 +1,17 @@
+import { inject, injectable } from 'tsyringe';
+
 import AppError from '@shared/errors/AppError';
 
 import ICreateContactDTO from '../dtos/ICreateContactDTO';
 import Contact from '../infra/typeorm/entities/Contact';
 import IContactsRepository from '../repositories/IContactsRepository';
 
+@injectable()
 class CreateContactService {
-  constructor(private contactRepository: IContactsRepository) { }
+  constructor(
+    @inject('ContactsRepository')
+    private contactRepository: IContactsRepository,
+  ) { }
   public async execute({
     firstName,
     lastName,
