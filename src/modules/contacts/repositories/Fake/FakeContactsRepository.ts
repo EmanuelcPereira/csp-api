@@ -1,6 +1,7 @@
 import ICreateContactDTO from '@modules/contacts/dtos/ICreateContactDTO';
 import Contact from '@modules/contacts/infra/typeorm/entities/Contact';
 import IContactsRepository from '@modules/contacts/repositories/IContactsRepository';
+import { v4 as uuid } from 'uuid';
 
 class FakeContactsRepository implements IContactsRepository {
   contacts: Contact[] = [];
