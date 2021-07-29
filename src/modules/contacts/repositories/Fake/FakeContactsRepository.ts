@@ -13,20 +13,22 @@ class FakeContactsRepository implements IContactsRepository {
   }: ICreateContactDTO): Promise<Contact> {
     const contact = new Contact();
 
-    contact.id = uuid();
-    contact.firstName = firstName;
-    contact.lastName = lastName;
-    contact.email = email;
+    Object.assign(contact, {
+      id: uuid(),
+      firstName,
+      lastName,
+      email,
+    });
 
     this.contacts.push(contact);
 
     return contact;
   }
   public async findByEmail(email: string): Promise<Contact | undefined> {
-    throw new Error('Method not implemented.');
+    return this.contacts.find(contact => contact.email === email);
   }
   public async findById(id: string): Promise<Contact | undefined> {
-    throw new Error('Method not implemented.');
+    return this.contacts.find(contact => contact.id === id);
   }
 }
 
