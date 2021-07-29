@@ -10,7 +10,6 @@ export class CreateAgenda1627153911387 implements MigrationInterface {
             name: 'id',
             type: 'varchar',
             isPrimary: true,
-            generationStrategy: 'uuid',
           },
           {
             name: 'firstName',
