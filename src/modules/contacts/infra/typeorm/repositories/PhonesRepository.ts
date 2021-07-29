@@ -24,6 +24,12 @@ class PhonesRepository implements IPhonesRepository {
 
     return phoneNumber;
   }
+
+  public async findById(contact_id: string): Promise<Phone | undefined> {
+    const contact = await this.repository.findOne({ contact_id });
+
+    return contact;
+  }
 }
 
 export default PhonesRepository;
